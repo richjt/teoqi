@@ -4,9 +4,8 @@ A practical implementation of a **fundamental equity factor model** in Python, i
 
 This project estimates the cross-sectional model
 
-\[
-\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B_t} \mathbf{f_t} + \boldsymbol{\epsilon_t}
-\]
+
+$\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B_t} \mathbf{f_t} + \boldsymbol{\epsilon_t}$
 
 at each month end, where:
 
