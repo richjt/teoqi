@@ -1,4 +1,4 @@
-# The Elements Of Quantitative Investing (TEOQI)
+# The Elements Of Quantitative Investing
 
 This is my project for implementing ideas in Giuseppe A. Paleologo's red book *The Elements of Quantitative Investing*. 
 
