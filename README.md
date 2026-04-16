@@ -5,10 +5,7 @@ This is my project for implementing ideas in Giuseppe A. Paleologo's red book *T
 Firstly, I decided to implement an equity factor model from scratch, building 11 different factors as introduced in the notebook 'linear_models_of_returns.ipynb'. To create the factors, the models ingest fundamental company data and market data for around 500 stocks in the S&P 500, over the last fifteen years. The factor matrices created can then be used to estimate an equity factor model, as shown in the notebook.
 
 # Equity Factor Model: Cross-Sectional Return Decomposition
-A practical implementation of a fundamental equity factor model in Python, inspired by the framework in *The Elements of Quantitative Investing* by Giuseppe A. Paleologo.
-
-This project estimates the cross-sectional model
-
+In brief, the notebook gives a a practical implementation of a fundamental equity factor model in Python, estimating the model:
 
 $\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B_t} \mathbf{f_t} + \boldsymbol{\epsilon_t}$
 
