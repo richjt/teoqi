@@ -9,10 +9,10 @@ $\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B_t} \mathbf{f_t} + \boldsymbol{\e
 
 at each month end, where:
 
-- `r_t` is the vector of forward stock returns
-- `B_t` is the matrix of stock factor exposures
-- `f_t` is the vector of realised factor returns
-- `\epsilon_t` is the vector of idiosyncratic residuals
+- $\mathbf{r_t}$ is the vector of forward stock returns
+- $\mathbf{B_t}$ is the matrix of stock factor exposures
+- $\mathbf{f_t}$ is the vector of realised factor returns
+- $\boldsymbol{\epsilon_t}$ is the vector of idiosyncratic residuals
 
 
 ## Repository structure
