@@ -16,6 +16,9 @@ at each month end, where:
 - $\mathbf{f_t}$ is the vector of realised factor returns
 - $\boldsymbol{\epsilon_t}$ is the vector of idiosyncratic residuals
 
+## Check for updates
+
+This project is a work in progress so please check back to updates. 
 
 ## Repository structure
 
