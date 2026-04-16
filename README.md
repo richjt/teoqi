@@ -1,11 +1,12 @@
 # The Elements Of Quantitative Investing (TEOQI)
 
-This is my project for implementing ideas in Giuseppe A. Paleologo's red book *The Elements of Quantitative Investing*. I very much enjoyed reading the book and it inspired me to implement some of the ideas and concepts. For me, I always find this is the best way of properly undertanding a complex topic. 
+This is my project for implementing ideas in Giuseppe A. Paleologo's red book *The Elements of Quantitative Investing*. 
 
-Firstly, I decided to implement an equity factor model from scratch, building 11 different factors as introduced in the notebook [linear models of returns](linear_models_of_returns.ipynb)'linear_models_of_returns.ipynb'. To create the factors, the models ingest fundamental company data and market data for around 500 stocks in the S&P 500, over the last fifteen years. The factor matrices created can then be used to estimate an equity factor model, as shown in the notebook.
+Firstly, I have implemented an equity factor model from scratch, building 11 different factors as introduced in the notebook [linear models of returns](linear_models_of_returns.ipynb). 
 
-# Equity Factor Model: Cross-Sectional Return Decomposition
-In brief, the notebook gives a a practical implementation of a fundamental equity factor model in Python, estimating the model:
+To create the factors, the models ingest fundamental company data and market data for the stocks in the S&P 500, over the last fifteen years. 
+
+The factor matrices created can then be used to estimate the equity factor model
 
 $\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B_t} \mathbf{f_t} + \boldsymbol{\epsilon_t}$
 
@@ -15,10 +16,6 @@ at each month end, where:
 - $\mathbf{B_t}$ is the matrix of stock factor exposures
 - $\mathbf{f_t}$ is the vector of realised factor returns
 - $\boldsymbol{\epsilon_t}$ is the vector of idiosyncratic residuals
-
-## Check for updates
-
-This project is a work in progress so please check back to updates. 
 
 ## Repository structure
 
