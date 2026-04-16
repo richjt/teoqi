@@ -1,6 +1,6 @@
 # Equity Factor Model: Cross-Sectional Return Decomposition
 
-A practical implementation of a **fundamental equity factor model** in Python, inspired by the framework in *The Elements of Quantitative Investing* by Giuseppe A. Paleologo.
+A practical implementation of a fundamental equity factor model in Python, inspired by the framework in *The Elements of Quantitative Investing* by Giuseppe A. Paleologo.
 
 This project estimates the cross-sectional model
 
