@@ -19,3 +19,14 @@ at each month end, where:
 - $\mathbf{f_t}$ is the vector of realised factor returns
 - $\boldsymbol{\epsilon_t}$ is the vector of idiosyncratic residuals
 
+## Progress
+
+<u>Complete</u>
+1. &#9989; Sourced and ingested fundamental equity data and market data to create 727,876 equity factor data points across 10 sylistic factors for 2010-2026, together with sector data. See [data pipleline](./python/data_pipeline.py). 
+2. &#9989; Implemented a utility class to create z-scored panel data (the $\mathbf{B}$'s) using the data from the previous step for a given point in time. See [FactorBuilder class](./python/factor_builder.py)
+3. &#9989; Used panel data and stock return data to fit $\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B} \mathbf{f_t} + \boldsymbol{\epsilon_t}$ for a point in time (see below in this notebook).
+4. &#9989; Ran Ordinary Least Squares (OLS) regression over 60 months to obtain initial estimates of the factor covariance matrix $\boldsymbol{{\hat{\Omega}_{f}}}$ and the idiosyncratic covariance matrix $\boldsymbol{{\hat{\Omega}_{\epsilon}}}$ (see below in this notebook)
+5. &#9989; Applied Ledoit-Wolf shrinkage to factor covariance matrix:
+$$\boldsymbol{{\hat{\Omega}_{f,shrink}}}(\rho) = (1-\rho)\boldsymbol{\hat{\Omega}_f} + \rho\frac{trace(\boldsymbol{\hat{\Omega}_f})}{m}\mathbf{I_m}$$
+6. &#9989; Applied diagonalisation to idiosyncratic covariance matrix $\boldsymbol{{\hat{\Omega}_{\epsilon}}}$ (see below in this notebook) 
+7. &#9989; Ran diagnostics on final estimates of $\boldsymbol{{\hat{\Omega}_{f}}}$ and $\boldsymbol{{\hat{\Omega}_{\epsilon}}}$ and identified an issue with the WLS regression (see below in this notebook) 
