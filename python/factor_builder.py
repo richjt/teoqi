@@ -9,8 +9,12 @@ class FactorBuilder:
                         sector_file: str = "./factor_data/sectors_clean.csv",
                         ticker_file: str = "./factor_data/ticker_list.csv",
                         winsorise: bool = False,
+                        drop_sector: bool = False,
+                        sector_to_drop: str = "Utilities"
                         ):
         
+        self.drop_sector = drop_sector
+        self.sector_to_drop = sector_to_drop
         
         # read in the factor data
         self.factor_data = pd.read_csv(factor_file, parse_dates=["date"])
@@ -96,7 +100,12 @@ class FactorBuilder:
         # for each sector we add a column that has a 1 if the ticker is in that sector and 0 otherwise
         sector_cols = pd.DataFrame(index=factor_df.index)
         for sector in self.sector_map.values():
-            sector_cols[sector] = factor_df.index.map(lambda x: 1 if self.sector_map[x] == sector else 0)
+            # if we are dropping a sector then add a column of 1's in place of the dropped sector
+            if self.drop_sector and sector == self.sector_to_drop:
+                sector_cols["market_factor"] = np.ones(len(factor_df.index))
+            else:
+                sector_cols[sector] = factor_df.index.map(lambda x: 1 if self.sector_map[x] == sector else 0)
+
         return pd.concat([factor_df, sector_cols], axis=1)
     
 
