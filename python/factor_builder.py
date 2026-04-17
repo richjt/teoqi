@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 
 class FactorBuilder:
+    """
+    A class for constructing panel factor data, to be used for esimating equity factor models.
+    """
     def __init__(self, factor_file: str,
                         sector_file: str = "./factor_data/sectors_clean.csv",
                         ticker_file: str = "./factor_data/ticker_list.csv",
@@ -28,7 +31,7 @@ class FactorBuilder:
 
     def calculate_factor_panel(self, 
                                 factor_name: str,
-                                request_date: str,
+                                request_date: pd.Timestamp,
                                 calc_median_by_sector: bool = True) -> pd.DataFrame:
         """
         Retrieves the data for the specified factor name and request date and creates a z-scored vector for that factor
@@ -42,7 +45,7 @@ class FactorBuilder:
         """
 
         # get the factor data for the given date
-        data = self.factor_data[self.factor_data["date"] == pd.to_datetime(request_date)]
+        data = self.factor_data[self.factor_data["date"] == request_date.normalize()]
         data = self.factor_data[self.factor_data["ticker"].isin(self.tickers)]
         data = data[data["measure_name"] == factor_name]
         
@@ -74,7 +77,7 @@ class FactorBuilder:
         return wide
         
     def build_cross_sectional_panel(self,
-                                    request_date: str,
+                                    request_date: pd.Timestamp,
                                     calc_median_by_sector: bool = True) -> pd.DataFrame:
 
         """
@@ -96,16 +99,5 @@ class FactorBuilder:
             sector_cols[sector] = factor_df.index.map(lambda x: 1 if self.sector_map[x] == sector else 0)
         return pd.concat([factor_df, sector_cols], axis=1)
     
-# utility function to create the forward return vector for a given date, the vector of returns from t to t+1
-def forward_return_vector(date, daily_prices, tickers=None):
-    date = pd.to_datetime(date)
-    next_month_end = date + pd.offsets.MonthEnd(1)
 
-    start_prices = daily_prices.loc[date]
-    end_prices = daily_prices.loc[:next_month_end].iloc[-1]
 
-    r = end_prices / start_prices - 1
-
-    if tickers is not None:
-        r = r.reindex(tickers)
-    return r
