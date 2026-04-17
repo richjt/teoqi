@@ -2,7 +2,7 @@
 
 This is my project for implementing ideas in Giuseppe A. Paleologo's red book The Elements of Quantitative Investing.
 
-Firstly, I have implemented an equity factor model from scratch, building 11 different factors as introduced in the notebook:
+Firstly, I have implemented an equity factor model from scratch, building 10 different stylistic factors plus sector categories as introduced in the notebook:
 
 [linear models of returns](linear_models_of_returns.ipynb)
 
