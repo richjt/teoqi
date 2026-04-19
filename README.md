@@ -27,22 +27,13 @@ at each month end, where:
 
 The time series of fitted models is then used to estimate the factor covariance matrix $\boldsymbol{\Omega_f}$ and idiosyncratic variance matrix $\boldsymbol{\Omega_\epsilon}$
 
-[factor_builder](./python/factor_builder.py)
+[factor_builder](./python/factor_builder.py) Code for constructing the factor and sector data from raw inputs
 
-Code for constructing the factor and sector data from raw inputs
+[data_pipeline](./python/data_pipeline.py) Code for constructing the factor and sector data from raw inputs
 
+[factor_data](./factor_data/) The calculated equity factor and sector data.
 
-[data_pipeline](./python/data_pipeline.py)
-
-Code for constructing the factor and sector data from raw inputs
-
-[factor_data](./factor_data/)
-
-The calculated equity factor data.
-
-[data_files](./data_files/)
-
-Monthly equity market data.
+[data_files](./data_files/) Monthly equity market data.
 
 
 ## Progress
