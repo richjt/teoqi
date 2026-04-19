@@ -6,7 +6,7 @@ applied to S&P 500 constituents over 2010–2026.
 
 The project builds a 10-factor plus sector equity risk model from
 fundamental and market data, fits the factor and idiosyncratic
-covariance matrices via OLS regression and documents diagnostics on the resulting estimates.
+covariance matrices via OLS and then WLS regression and documents diagnostics on the resulting estimates.
 
 Implemented in Python with Jupyter notebooks for exposition.
 [linear models of returns](linear_models_of_returns.ipynb)
