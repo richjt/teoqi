@@ -1,9 +1,14 @@
-# The Elements Of Quantitative Investing
+# teoqi — The Elements of Quantitative Investing
 
-This is my project for implementing ideas in Giuseppe A. Paleologo's red book The Elements of Quantitative Investing.
+An implementation study of equity factor modelling methods from
+Giuseppe A. Paleologo's *The Elements of Quantitative Investing*,
+applied to S&P 500 constituents over 2010–2026.
 
-Firstly, I have implemented an equity factor model from scratch, building 10 different stylistic factors plus sector categories as introduced in the notebook:
+The project builds a 10-factor plus sector equity risk model from
+fundamental and market data, fits the factor and idiosyncratic
+covariance matrices via OLS regression and documents diagnostics on the resulting estimates.
 
+Implemented in Python with Jupyter notebooks for exposition.
 [linear models of returns](linear_models_of_returns.ipynb)
 
 To create the factors, the models ingest fundamental company data and market data for the stocks in the S&P 500, over the last fifteen years.
