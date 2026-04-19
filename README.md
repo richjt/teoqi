@@ -9,11 +9,12 @@ fundamental and market data, fits the factor and idiosyncratic
 covariance matrices via OLS and then WLS regression and documents diagnostics on the resulting estimates.
 
 Implemented in Python with Jupyter notebooks for exposition.
+
+## Project Structure
+
 [linear models of returns](linear_models_of_returns.ipynb)
 
-To create the factors, the models ingest fundamental company data and market data for the stocks in the S&P 500, over the last fifteen years.
-
-The factor matrices created can then be used to estimate the equity factor model
+Constructs equity factor panel data for single and multiple periods and uses them to fit the equity factor model:
 
 $\mathbf{r_t} = \boldsymbol{\alpha} + \mathbf{B_t} \mathbf{f_t} + \boldsymbol{\epsilon_t}$
 
@@ -23,6 +24,26 @@ at each month end, where:
 - $\mathbf{B_t}$ is the matrix of stock factor exposures
 - $\mathbf{f_t}$ is the vector of realised factor returns
 - $\boldsymbol{\epsilon_t}$ is the vector of idiosyncratic residuals
+
+The time series of fitted models is then used to estimate the factor covariance matrix $\boldsymbol{\Omega_f}$ and idiosyncratic variance matrix $\boldsymbol{\Omega_\epsilon}$
+
+[factor_builder](./python/factor_builder.py)
+
+Code for constructing the factor and sector data from raw inputs
+
+
+[data_pipeline](./python/data_pipeline.py)
+
+Code for constructing the factor and sector data from raw inputs
+
+[factor_data](./factor_data/)
+
+The calculated equity factor data.
+
+[data_files](./data_files/)
+
+Monthly equity market data.
+
 
 ## Progress
 
